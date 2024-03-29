@@ -1,3 +1,26 @@
 *{
     background-color: azure;
 }
+
+.form-container{
+    display: flex;
+    justify-content: start;
+    margin-left: 300px;
+    margin-top: 80px;
+} 
+
+.label-text{
+    font-size: 20px;
+    font-family: "Roboto";
+    font-weight:bold ;
+    font-style:normal
+}
+.input-box{
+    width: 355px;
+    height: 47px;
+}
+.submit-btn{
+    font-size:17px ;
+    font-family: unset;
+   
+}
