@@ -5,14 +5,15 @@ let useremailEI = document.getElementById("useremail")
 
 let namerequiredmsgEl = document.getElementById("namerequiredmsg")
 let emailrequiredmsgEl = document.getElementById("emailrequiredmsg")
-const submitFrom =   function() { 
 
-    let userdata = {
+const submitFrom =   function() { 
+    let userdata =  {
 
         name:usernameEI.value , 
         email:useremailEI.value 
     }
-    
+    localStorage.setItem("UserName",JSON.stringify(usernameEI.value))
+    localStorage.setItem("UserEmail",JSON.stringify(useremailEI.value))
 let jsondata = JSON.stringify(userdata)
 
     try{ 
@@ -35,7 +36,9 @@ let jsondata = JSON.stringify(userdata)
          networkCall.then((response)=>{
             return response.text()
          }).then((jsondata)=>{ 
-            if (jsondata == "success"){
+            if (jsondata == "success"){ 
+                usernameEI.value = ""
+                useremailEI.value = ""
                    pageRedirect()
             }
          })
@@ -45,13 +48,12 @@ let jsondata = JSON.stringify(userdata)
     }
 }
 
-
 myformEI.addEventListener("submit",function(event){
     event.preventDefault() 
 
     let validation = Fromvalidation()
     if(validation){ 
-        alert("sumbit")
+
         submitFrom()
     }
      
@@ -67,12 +69,13 @@ function Fromvalidation(){
         input_value = false
     } 
      if (useremailEI.value === "" || !usernameEI.value.trim()) {
-emailrequiredmsgEl.textContent = "Required*" 
-input_value = false
+        emailrequiredmsgEl.textContent = "Required*" 
+        input_value = false
     }
     return input_value
 }
 
-
-    
+function pageRedirect(){ 
+    window.location = "file:///D:/developer/Project/Web_Application/Dashboard/dashboard.html"
+} 
 
