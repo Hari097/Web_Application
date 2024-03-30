@@ -1,41 +1,78 @@
 let myformEI = document.getElementById("myform")
 
+let usernameEI = document.getElementById("username")
+let useremailEI = document.getElementById("useremail")
 
+let namerequiredmsgEl = document.getElementById("namerequiredmsg")
+let emailrequiredmsgEl = document.getElementById("emailrequiredmsg")
+const submitFrom =   function() { 
 
+    let userdata = {
 
-const submitFrom =  async function() {
+        name:usernameEI.value , 
+        email:useremailEI.value 
+    }
     
-
+let jsondata = JSON.stringify(userdata)
 
     try{ 
         let options = {
-            method: "GET", // *GET, POST, PUT, DELETE, etc.
-            mode: "no-cors", // no-cors, *cors, same-origin
+            method: "POST" ,
+            mode: "cors", // no-cors, *cors, same-origin
             // cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
             // credentials: "same-origin", // include, *same-origin, omit
             headers: {
-              "Content-Type": "application/json",
-              'Content-Type': 'application/x-www-form-urlencoded',
-            }
+                'Accept': 'application/json',
+              "Content-Type": "application/json"
+            //   'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: jsondata
         }
+
         let URL =  "http://localhost:3005/login" 
-        let response =  await fetch(URL,options) 
+        let networkCall =  fetch(URL,options) 
 
-        let jsonData = response
-        console.log(jsonData)
-
-
-
-
-       
+         networkCall.then((response)=>{
+            return response.text()
+         }).then((jsondata)=>{ 
+            if (jsondata == "success"){
+                   pageRedirect()
+            }
+         })
     } catch(error){
             console.log(` fetch error : ${error.message}`)
 
     }
 }
 
+
 myformEI.addEventListener("submit",function(event){
-    event.preventDefault()
-    submitFrom()
-    })
+    event.preventDefault() 
+
+    let validation = Fromvalidation()
+    if(validation){ 
+        alert("sumbit")
+        submitFrom()
+    }
+     
+  
+})  
+
+function Fromvalidation(){
+    let input_value = true
+
+ 
+    if (usernameEI.value === "" || !usernameEI.value.trim()){
+        namerequiredmsgEl.textContent = "Required*"
+        input_value = false
+    } 
+     if (useremailEI.value === "" || !usernameEI.value.trim()) {
+emailrequiredmsgEl.textContent = "Required*" 
+input_value = false
+    }
+    return input_value
+}
+
+
     
+
