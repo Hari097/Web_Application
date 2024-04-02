@@ -31,7 +31,7 @@ let jsondata = JSON.stringify(userdata)
             body: jsondata
         }
 
-        let URL =  "http://localhost:3005/login" 
+        let URL =  "http://localhost:3006/login" 
         let networkCall =  fetch(URL,options) 
 
          networkCall.then((response)=>{
@@ -41,7 +41,7 @@ let jsondata = JSON.stringify(userdata)
                 usernameEI.value = ""
                 useremailEI.value = ""
                    pageRedirect()
-            }
+            } 
          })
     } catch(error){
             console.log(` fetch error : ${error.message}`)
