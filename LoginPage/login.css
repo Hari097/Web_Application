@@ -1,12 +1,15 @@
 *{
     background-color: azure;
 }
+.mycontainer{
+    display: flex;
+    position: relative;
+}
 
 .form-container{
     display: flex;
     justify-content: start;
-    margin-left: 300px;
-    margin-top: 80px;
+    margin-top: 110px;
 } 
 
 .label-text{
@@ -24,3 +27,86 @@
     font-family: unset;
    
 }
+.submit-btn-reg{
+    font-size:17px ;
+    font-family: unset;
+    margin-left: 180px;
+   
+}
+
+/* 
+<!-- Create New User PopUp Box --> */ 
+
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 820px;
+    width: 40%;
+    height: 100vh;
+    background-color: #f1f1f1;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Ensure the popup appears on top */
+    display: none; /* Initially hide the popup */
+}
+.close{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    /* right: 100px; */
+    cursor: pointer;
+}
+
+
+ .create-heading{
+    margin-top: 30px;
+    /* color:black; */
+    font-size: 20px;
+    background-color: black;
+    height: 0%;
+ }
+
+.creat-user-container{
+    display: flex;
+flex-direction: column;
+
+    position: absolute;
+    margin-top: 70px;
+    height: 490px;
+    width: 455px;
+    margin-left: 20px;
+    border-radius: 10px;
+border: 2px;
+border-color: azure;
+}
+
+.input-label-card{
+    
+  margin-left: 20px;
+}
+
+.create-input-box{
+    width: 250px;
+    height: 40px;
+    border: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color:lightcoral;
+}
+
+.create-btn{
+    margin-top: 30px;
+ width: 90px;
+    margin-left: 310px;
+}
+
+.none-cls{
+    display: none;
+}
+.none-cls-flex{
+    display: flex;
+}
+
+
+

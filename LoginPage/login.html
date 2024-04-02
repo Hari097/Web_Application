@@ -26,11 +26,61 @@
                     <label for="useremail" class="label-text">Email</label>
                     <input type="text" id="useremail" class="form-control input-box">
                     <p id="emailrequiredmsg"></p>
-                </div>
+                </div> 
+                
                <button type="submit" class="btn btn-primary mt-2 submit-btn">SUBMIT</button>
+               <button type="button" id="register" class="btn btn-primary mt-2  submit-btn-reg">Register</button>
             </form>
         </div>
 
+      
+        <!-- Create New User PopUp Box -->
+
+<div class="popup" id="Mypopup">
+ 
+        <button id="close-btn" type="button" class="close mb-3" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    <h1 class="create-heading">Create New Account</h1>
+    
+        
+      
+        <div class="creat-user-container">
+        
+            <div class="input-label-card mt-2">
+                <label for="name" class="label-text">Username</label>
+            <br>
+                <input type="text" id="name" class="create-input-box">
+            </div>
+            
+            <div class="input-label-card mt-3">
+                <label for="email" class="label-text">Email</label>
+                <br>
+                <input type="text" id="emali" class="create-input-box">
+            </div>
+            
+            <div class="input-label-card mt-4">
+                <label for="possword" class="label-text">Password</label>
+               <br>
+                <input type="password" id="possword" class="create-input-box">
+            </div>
+        
+            <div class="input-label-card mt-3">
+                <label for="gender" class="label-text">Gender</label>
+                <br>
+                <select id="gender" class="create-input-box">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <button type="button" id="createNewAccount" class="btn btn-primary create-btn  ">ADD</button>
+        
+       </div>
+  
+  
+  
+    
+</div>
     </div>
 </body>
 </html> 
