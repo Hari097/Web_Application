@@ -1,7 +1,8 @@
 let myformEI = document.getElementById("myform")
-
+let closeBtnEl =  document.getElementById("close-btn")
 let usernameEI = document.getElementById("username")
 let useremailEI = document.getElementById("useremail")
+let registerBtnEI = document.getElementById("register")
 
 let namerequiredmsgEl = document.getElementById("namerequiredmsg")
 let emailrequiredmsgEl = document.getElementById("emailrequiredmsg")
@@ -79,3 +80,13 @@ function pageRedirect(){
     window.location = "file:///D:/developer/Project/Web_Application/Dashboard/dashboard.html"
 } 
 
+closeBtnEl.addEventListener("click", function(){
+    let popupEl = document.getElementById("Mypopup")
+    popupEl.classList.add("none-cls")
+    popupEl.classList.remove("none-cls-flex")
+})
+
+registerBtnEI.addEventListener("click", function(){
+    let popupEl = document.getElementById("Mypopup")
+    popupEl.classList.add("none-cls-flex")
+})
